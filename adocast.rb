@@ -45,6 +45,7 @@ module Asciidoctor
         def as_json(*)
             {
                 :type => :block,
+                :lines => self.lines,
                 :source_location => self.source_location,
                 :blocks => self.blocks
             }

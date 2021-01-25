@@ -88,5 +88,5 @@ module Asciidoctor
     end  
 end
 
-doc = Asciidoctor.load_file ARGV[0], { :sourcemap => true }
+doc = Asciidoctor.load_file ARGV[0], { :sourcemap => true, :backend => "docbook" }
 puts doc.to_json

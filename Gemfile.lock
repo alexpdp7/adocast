@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     asciidoctor (2.0.12)
     coderay (1.1.3)

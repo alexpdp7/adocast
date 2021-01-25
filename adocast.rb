@@ -15,6 +15,7 @@ module Asciidoctor
         def as_json(*)
             {
                 :type => :document,
+                :attributes => self.attributes,
                 :source_location => self.source_location,
                 :blocks => self.blocks
             }
@@ -29,6 +30,7 @@ module Asciidoctor
         def as_json(*)
             {
                 :type => :section,
+                :attributes => self.attributes,
                 :title => self.title,
                 :id => self.id,
                 :level => self.level,
@@ -45,7 +47,8 @@ module Asciidoctor
         def as_json(*)
             {
                 :type => :block,
-                :lines => self.lines,
+                :attributes => self.attributes,
+                :content => self.content,
                 :source_location => self.source_location,
                 :blocks => self.blocks
             }
@@ -59,6 +62,7 @@ module Asciidoctor
         def as_json(*)
             {
                 :type => :list,
+                :attributes => self.attributes,
                 :source_location => self.source_location,
                 :blocks => self.blocks
             }
@@ -72,6 +76,7 @@ module Asciidoctor
         def as_json(*)
             {
                 :type => :list_item,
+                :attributes => self.attributes,
                 :text => self.text,
                 :source_location => self.source_location,
                 :blocks => self.blocks
@@ -83,5 +88,5 @@ module Asciidoctor
     end  
 end
 
-doc = Asciidoctor.load_file ARGV[0], :sourcemap => true
+doc = Asciidoctor.load_file ARGV[0], { :sourcemap => true }
 puts doc.to_json

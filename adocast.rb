@@ -77,7 +77,7 @@ module Asciidoctor
             {
                 :type => :list_item,
                 :attributes => self.attributes,
-                :text => self.text,
+                :content => self.text,
                 :source_location => self.source_location,
                 :blocks => self.blocks
             }

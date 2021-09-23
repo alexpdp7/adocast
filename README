@@ -1,1 +1,7 @@
+Archiving this project.
+
+Parsing AsciiDoc is problematic, but hooking into Asciidoctor does not seem like a full solution as it does not seem to create a complete parse tree in a convenient manner.
+
+The code here works, but it's not a proper way to integrate with Asciidoctor and some stuff is problematic.
+
 $ bundle exec ruby adocast.rb <.adoc> | ./link_extractor.py  | ./link_checker.py
